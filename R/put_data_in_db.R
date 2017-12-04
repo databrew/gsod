@@ -2,9 +2,11 @@
 #' 
 #' Read all the op.gz files from gsod/ftp.ncdc.noaa.gov/pub/data/gsod/<year>/<day-location-files>, and load into a psql database named gsod
 #' @return Data read from local files and appended to the gsod table of the gsod psql database
-#' @import dplyr, RPostgreSQL
+#' @export
 
 put_data_in_db <- function(){
+  require(dplyr)
+  require(RPostgreSQL)
   # connect to db
   drv <- dbDriver("PostgreSQL")
   # creates a connection to the postgres database

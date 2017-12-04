@@ -2,8 +2,10 @@
 #' 
 #' Update the database with the most recent data
 #' @return Data downloaded via ftp, and uploaded into to database
-#' @import dplyr, RPostgreSQL
+#' @export
 update_db <- function(){
+  require(dplyr)
+  require(RPostgreSQL)
   # connect to db
   con <- src_postgres(dbname = 'gsod',
                       host = 'localhost',

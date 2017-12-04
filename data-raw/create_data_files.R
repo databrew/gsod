@@ -21,15 +21,14 @@ for (i in 1:length(years)){
                        "' AND date <= '", end_date, "')")
   x <- tbl(src = con, 
            from = sql(this_query)) %>%
-    group_by(ctry, date, lon, lat) %>%
-    tally %>%
     collect() 
   data_name <- paste0('gsod', this_year)
   assign(data_name,
-         x)
+         data.frame(x))
   save(list = data_name,
        file = paste0('../data/', data_name, '.rda'))
   # devtools::use_data(get(data_name),
   #                    overwrite = TRUE)
 }
 
+# library(gsod)

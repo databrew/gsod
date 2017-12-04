@@ -3,8 +3,10 @@
 #' Get data from the GSOD 
 #' @param years A numeric vector of years for which data should be fetched
 #' @return op.gz files will be saved to gsod/ftp.ncdc.noaa.gov/pub/data/gsod/<year>/<day-location-files>
-#' @import tidyverse, RCurl
+#' @export
 get_data <- function(years = 2000:2017){
+  require(tidyverse)
+  require(RCurl)
   if(!dir.exists('gsod')){
     dir.create('gsod')
   }
@@ -17,4 +19,6 @@ get_data <- function(years = 2000:2017){
     } else {
       message(this_year, ' already is on the hard drive. Skipping.\n---If you need to re-fetch data for this year, delete this folder: ', paste0('ftp.ncdc.noaa.gov/pub/data/gsod/', this_year))
     }
+  }
+}
     
