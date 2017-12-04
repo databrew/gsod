@@ -1,0 +1,11 @@
+Package: gsod
+Version: 0.0.0.9000
+Title: Retrieve and use GSOD dataWhat the Package Does (one line, title case)
+Description: Tools for retrieving GSOD data, formatting, and hosting locally.
+Authors@R: person("Joe", "Brew", , "joe@databrew.cc", c("aut", "cre"))
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 5.0.1
