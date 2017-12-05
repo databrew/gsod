@@ -96,7 +96,7 @@ ggplot() +
                  y = lat,
                  color = visib),
              alpha = 0.6,
-             size = 0.1) +
+             size = 0.05) +
   scale_color_continuous(na.value = NA,
                          name = 'Visibility',
                          low = 'yellow',
