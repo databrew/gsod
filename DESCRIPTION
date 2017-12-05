@@ -1,6 +1,6 @@
 Package: gsod
 Version: 0.0.0.9000
-Title: Retrieve and use GSOD dataWhat the Package Does (one line, title case)
+Title: Retrieve and use GSOD data
 Description: Tools for retrieving GSOD data, formatting, and hosting locally.
 Authors@R: person("Joe", "Brew", , "joe@databrew.cc", c("aut", "cre"))
 License: MIT + file LICENSE

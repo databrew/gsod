@@ -1,0 +1,90 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# gsod: Tools for using NOAA Global Surface Summary of the Day data
+
+## Installation
+
+
+```r
+if(!require(devtools)) install.packages("devtools")
+install_github('databrew/gsod')
+```
+
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      fig.width = 4,
+                      fig.height = 4)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(gsod)
+```
+
+## Purpose
+
+[GSOD data](https://data.noaa.gov/dataset/global-surface-summary-of-the-day-gsod), with daily meterological summaries of over 9,000 weather stations around the world, is large, stored in tens of thousands of different files, and a bit difficult to quickly access and use. The purpose of the `gsod` package is to make accessing and analyzing GSOD data quicker and easier. 
+
+## Use 
+
+The `gsod` package consists of 18 dataframes, one for each year from 2000 through 2017. To access any of these dataframes, simply attach the package and then type `gsod<year>`. For example:
+
+```{r}
+library(gsod)
+my_data <- gsod2016
+head(my_data)
+```
+
+## Examples
+
+### Get conditions at every weather station on July 1, 2016.
+
+```{r}
+library(gsod)
+library(tidyverse)
+avg_temp <- 
+  gsod2016 %>%
+  filter(date == '2016-07-01') 
+```
+
+### Plot 
+
+```{r, fig.width = 7}
+library(rworldmap)
+library(ggplot2)
+world <- map_data(map="world")
+
+ggplot() + 
+  geom_map(data=world, 
+           map=world,
+           aes(map_id=region, x=long, y=lat),
+           fill = 'black',
+           alpha = 0.6) +
+  geom_point(data = avg_temp,
+             aes(x = lon,
+                 y = lat,
+                 color = visib),
+             alpha = 0.6,
+             size = 0.1) +
+  scale_color_continuous(na.value = NA,
+                         name = 'Visibility',
+                         low = 'yellow',
+                         high = 'blue') +
+  labs(x = 'Longitude',
+       y = 'Latitude') +
+  theme(legend.position = 'bottom')
+
+
+```
