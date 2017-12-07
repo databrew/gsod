@@ -110,10 +110,10 @@ ggplot() +
 
 ![](README-unnamed-chunk-4-1.png)
 
-Details
--------
+Why `gsod`?
+-----------
 
-The main advantage of using the `gsod` package over alternatives is speed: rather than interacting with NOAA's FTP server, using the `gsod` package means you have the data on your hard drive upon installation, and can get into an R session quickly.
+The main advantage of using the `gsod` package over alternatives is speed: rather than interacting with NOAA's FTP server, using the `gsod` package means you have the data on your hard drive upon installation, and can get into an R session quickly. If you want more flexibility, need live up-to-date data, or want more control over the formatting, units, and uncertainty around these data, you should consult the README of the [GSODR package](https://github.com/ropensci/GSODR), which dives into more detail about the data source, and also gives an overview of available alternatives.
 
 This package owes a debt of gratitude to the work carried out in the [GSODR package](https://github.com/ropensci/GSODR). Specifically, it relied heavily on the `GSODR::reformat_GSOD` function to "clean up" the data prior to storage.
 
@@ -123,3 +123,16 @@ WMO Resolution 40. NOAA Policy
 *Users of these data should take into account the following (from the [NCEI website](http://www7.ncdc.noaa.gov/CDO/cdoselect.cmd?datasetabbv=GSOD&countryabbv=&georegionabbv=)):*
 
 > "The following data and products may have conditions placed on their international commercial use. They can be used within the U.S. or for non-commercial international activities without restriction. The non-U.S. data cannot be redistributed for commercial purposes. Re-distribution of these data by others must provide this same notification." [WMO Resolution 40. NOAA Policy](https://public.wmo.int/en/our-mandate/what-we-do/data-exchange-and-technology-transfer)
+
+Contact
+-------
+
+-   Please [report any problems to us](https://github.com/databrew/gsod/issues).
+-   If you have any questions, don't hesitate to [contact us](http://www.databrew.cc/contact).
+
+DataBrew
+--------
+
+-   This package is a project of [DataBrew](http://www.databrew.cc), empowering researchers in academia and industry to explore, understand, and communicate their data through consulting and teaching.
+
+[![databrew](logo_clear.png)](http://www.databrew.cc)
