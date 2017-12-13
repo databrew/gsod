@@ -110,6 +110,11 @@ ggplot() +
 
 ![](README-unnamed-chunk-4-1.png)
 
+Vignette
+--------
+
+A package vignette with more examples is available on the [DataBrew website](http://databrew./cc/gsod).
+
 Why `gsod`?
 -----------
 
