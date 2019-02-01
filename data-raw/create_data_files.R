@@ -6,11 +6,11 @@ library(RPostgreSQL)
 # get_data(); put_data_in_db(); update_db()
 
 # connect to db
-con <- src_postgres(dbname = 'gsod',
-                    host = 'localhost',
-                    port = 5432)
+con <- src_postgres(dbname = 'gsod')#,
+                    # host = 'localhost',
+                    # port = 5432)
 
-years <- 2000:2017
+years <- 2017:2019
 for (i in 1:length(years)){
   this_year <- years[i]
   message(this_year)

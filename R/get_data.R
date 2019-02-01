@@ -4,7 +4,7 @@
 #' @param years A numeric vector of years for which data should be fetched
 #' @return op.gz files will be saved to gsod/ftp.ncdc.noaa.gov/pub/data/gsod/<year>/<day-location-files>
 #' @export
-get_data <- function(years = 2000:2017){
+get_data <- function(years = 2000:2019){
   require(tidyverse)
   require(RCurl)
   if(!dir.exists('gsod')){

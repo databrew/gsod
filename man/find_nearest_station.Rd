@@ -4,7 +4,8 @@
 \alias{find_nearest_station}
 \title{Find nearest station}
 \usage{
-find_nearest_station(location = NULL, lon = NULL, lat = NULL, n = 1)
+find_nearest_station(location = NULL, lon = NULL, lat = NULL,
+  n = 1)
 }
 \arguments{
 \item{n}{The number of stations to return, in order of distance}

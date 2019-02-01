@@ -14,6 +14,7 @@ update_db <- function(){
   max_date <- tbl(src = con, 
                   from = sql('SELECT DISTINCT MAX(date) FROM gsod')) %>%
     collect() %>% .$max
+  max_year <- as.numeric(format(max_date, '%Y'))
   this_year <- as.numeric(format(Sys.Date(), '%Y'))
   get_new <- sort(unique(max_year:this_year))
   for (i in 1:length(get_new)){
