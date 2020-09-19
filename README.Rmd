@@ -89,7 +89,7 @@ ggplot() +
 
 ## Vignette  
 
-A package vignette with more examples is available on the [DataBrew website](http://databrew./cc/gsod).
+A package vignette with more examples is available on the [DataBrew website](http://databrew.cc/gsod).
 
 ## Why `gsod`?
 
